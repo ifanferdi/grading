@@ -1,8 +1,8 @@
-const config = require("../../../config/config")
+const config = require('../../../config/config')
 
 const RabbitMqRepository = async (
   rabbit,
-  rabbitHelper,
+  // rabbitHelper,
   exchange = config.rabbitmq.exchange
 ) => {
   const channel = await rabbit
@@ -55,11 +55,9 @@ const RabbitMqRepository = async (
     })
   }
 
-
-
   return {
     publishQueue,
-    subscribeQueue,
+    subscribeQueue
   }
 }
 
